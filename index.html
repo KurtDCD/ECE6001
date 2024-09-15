@@ -10,7 +10,7 @@
   <!-- Hero Section -->
   <section id="hero">
     <h1>Charge Your Devices with Every Step You Take!</h1>
-    <p>Discover how your daily movements can power your earbuds and wearables with our revolutionary energy-harvesting device.</p>
+    <p class="subheadline">Discover how your daily movements can power your earbuds and wearables with our revolutionary energy-harvesting device.</p>
     <button onclick="scrollToCalculator()">Find Out How Much You Can Generate!</button>
   </section>
 
@@ -18,30 +18,39 @@
   <section id="calculator">
     <h2>Interactive Energy Calculator</h2>
     <p>Use our calculator to see how much energy you can generate from your daily activities!</p>
-    <!-- Calculator Form -->
-    <form id="energyForm">
-      <label for="activity">Choose Your Activity:</label>
-      <select id="activity" name="activity">
-        <option value="walking">Walking</option>
-        <option value="jogging">Jogging</option>
-        <option value="biking">Biking</option>
-      </select>
+    
+    <div class="calculator-container">
+      <!-- Calculator Form -->
+      <form id="energyForm">
+        <div class="form-group">
+          <label for="activity">Choose Your Activity:</label>
+          <select id="activity" name="activity">
+            <option value="walking">Walking</option>
+            <option value="jogging">Jogging</option>
+            <option value="biking">Biking</option>
+          </select>
+        </div>
 
-      <label for="hours">Enter Duration:</label>
-      <input type="number" id="hours" name="hours" min="0" placeholder="Hours">
-      <input type="number" id="minutes" name="minutes" min="0" max="59" placeholder="Minutes">
+        <div class="form-group">
+          <label for="hours">Enter Duration:</label>
+          <div class="time-inputs">
+            <input type="number" id="hours" name="hours" min="0" placeholder="Hours">
+            <input type="number" id="minutes" name="minutes" min="0" max="59" placeholder="Minutes">
+          </div>
+        </div>
 
-      <button type="button" onclick="calculateEnergy()">Calculate My Energy</button>
-    </form>
+        <button type="button" onclick="calculateEnergy()">Calculate My Energy</button>
+      </form>
 
-    <!-- Output Display -->
-    <div id="result"></div>
+      <!-- Output Display -->
+      <div id="result"></div>
+    </div>
   </section>
 
   <!-- How It Works -->
   <section id="how-it-works">
     <h2>The Power of Movement: How Our Technology Works</h2>
-    <p>Our device utilizes advanced Relaxor Piezoelectric Single Crystal Multilayer Stacks (RPSEHT)...</p>
+    <p>Our device utilizes advanced Relaxor Piezoelectric Single Crystal Multilayer Stacks (RPSEHT) that convert mechanical energy from your movements into electrical energy. By tuning the resonant frequency, we've optimized the system to harvest maximum energy from everyday activities like walking, jogging, and biking.</p>
     <!-- Add more content as needed -->
   </section>
 
@@ -49,10 +58,11 @@
   <section id="benefits">
     <h2>Why Choose Our Energy Harvester?</h2>
     <ul>
-      <li>Stay Charged on the Go</li>
-      <li>Eco-Friendly</li>
-      <li>Convenient and Portable</li>
-      <!-- Add more benefits -->
+      <li><strong>Stay Charged on the Go:</strong> Reduce reliance on wall chargers and power banks.</li>
+      <li><strong>Eco-Friendly:</strong> Contribute to sustainability by generating renewable energy.</li>
+      <li><strong>Convenient and Portable:</strong> Compact design fits seamlessly into your daily life.</li>
+      <li><strong>No Extra Effort Required:</strong> Harvest energy passively from your normal activities.</li>
+      <li><strong>Compatible with Your Devices:</strong> Suitable for charging earbuds, wearables, and other small electronics.</li>
     </ul>
   </section>
 
