@@ -44,11 +44,10 @@ function calculateEnergy() {
 }
 
 function gtag_report_conversion() {
-  gtag('event', 'conversion', {
-    'send_to': 'G-7NWXG5MTTL/contact_form',
-    'event_callback': function() {
-      console.log('Form submission tracked.');
-    }
-  });
+    gtag('event', 'button_click', {
+        'event_category': 'engagement',
+        'event_label': 'Calculate Energy Button',
+        'value': 1
+      });
   return false; // Prevent default form submission if needed
 }
