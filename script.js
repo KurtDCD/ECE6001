@@ -42,3 +42,13 @@ function calculateEnergy() {
     <p>That's enough to charge your <strong>wireless earbuds</strong> by <strong>${earbudsCharge}%</strong> or your <strong>smartwatch</strong> by <strong>${smartwatchCharge}%</strong>!</p>
   `;
 }
+
+function gtag_report_conversion() {
+  gtag('event', 'conversion', {
+    'send_to': 'G-7NWXG5MTTL/contact_form',
+    'event_callback': function() {
+      console.log('Form submission tracked.');
+    }
+  });
+  return false; // Prevent default form submission if needed
+}
