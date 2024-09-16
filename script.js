@@ -41,13 +41,33 @@ function calculateEnergy() {
     <p>You can generate approximately <strong>${energyJoules} Joules</strong> of energy from your daily activities!</p>
     <p>That's enough to charge your <strong>wireless earbuds</strong> by <strong>${earbudsCharge}%</strong> or your <strong>smartwatch</strong> by <strong>${smartwatchCharge}%</strong>!</p>
   `;
+  // Track Calculator Button Click Event
+  gtag('event', 'Calculate Click', {
+    'event_category': 'Calculator',
+    'event_label': 'Energy Calculation',
+    'value': energyJoules
+  });
 }
 
-function gtag_report_conversion() {
-    gtag('event', 'button_click', {
-        'event_category': 'engagement',
-        'event_label': 'Calculate Energy Button',
-        'value': 1
-      });
-  return false; // Prevent default form submission if needed
-}
+// Track Form Submission Event
+function trackFormSubmission(event) {
+    // Prevent the default form submission to ensure event is tracked first
+    event.preventDefault();
+  
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+  
+    // Trigger the form submission event
+    gtag('event', 'Submit', {
+      'event_category': 'Form',
+      'event_label': 'Sign Up',
+      'value': 1
+    });
+  
+    // Allow Netlify Forms to handle the submission
+    // Use a timeout to ensure the event is sent before the page reloads
+    setTimeout(() => {
+      event.target.submit();
+    }, 100);
+  }

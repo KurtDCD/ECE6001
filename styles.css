@@ -30,6 +30,34 @@ body {
     margin-bottom: 10px;
   }
   
+  /* Responsive Design */
+
+  @media (max-width: 768px) {
+    /* Benefits Section */
+    .benefits-content {
+      flex-direction: column;
+    }
+  
+    .benefits-text, .benefits-image {
+      flex: 1 1 100%;
+      padding: 10px;
+    }
+  
+    /* Calculator Section */
+    .calculator-container {
+      padding: 20px;
+    }
+  
+    .time-inputs {
+      flex-direction: column;
+    }
+  
+    .time-inputs input {
+      width: 100%;
+    }
+  }
+  
+
   /* Hero Section */
   #hero {
     background: url('hero_image.png') no-repeat center center/cover;
